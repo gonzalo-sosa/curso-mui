@@ -4,6 +4,8 @@ import AutoCompleteExample from "./components/AutoCompleteExample";
 import ButtonExample from "./components/ButtonExample";
 import SkeletonExample from "./components/SkeletonExample";
 import TableExample from "./components/TableExample";
+import TextFieldExample from "./components/TextFieldExample";
+import TypographyExample from "./components/TypographyExample";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: "table-example",
         element: <TableExample />,
+      },
+      {
+        path: "text-field-example",
+        element: <TextFieldExample />,
+      },
+      {
+        path: "typography-example",
+        element: <TypographyExample />,
       },
     ],
   },

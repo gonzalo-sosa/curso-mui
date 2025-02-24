@@ -1,0 +1,82 @@
+[
+  {
+    "value": "AR",
+    "label": "Argentina"
+  },
+  {
+    "value": "BR",
+    "label": "Brasil"
+  },
+  {
+    "value": "US",
+    "label": "Estados Unidos"
+  },
+  {
+    "value": "ES",
+    "label": "España"
+  },
+  {
+    "value": "MX",
+    "label": "México"
+  },
+  {
+    "value": "FR",
+    "label": "Francia"
+  },
+  {
+    "value": "IT",
+    "label": "Italia"
+  },
+  {
+    "value": "DE",
+    "label": "Alemania"
+  },
+  {
+    "value": "JP",
+    "label": "Japón"
+  },
+  {
+    "value": "CN",
+    "label": "China"
+  },
+  {
+    "value": "IN",
+    "label": "India"
+  },
+  {
+    "value": "RU",
+    "label": "Rusia"
+  },
+  {
+    "value": "CA",
+    "label": "Canadá"
+  },
+  {
+    "value": "AU",
+    "label": "Australia"
+  },
+  {
+    "value": "UK",
+    "label": "Reino Unido"
+  },
+  {
+    "value": "ZA",
+    "label": "Sudáfrica"
+  },
+  {
+    "value": "NZ",
+    "label": "Nueva Zelanda"
+  },
+  {
+    "value": "CO",
+    "label": "Colombia"
+  },
+  {
+    "value": "PE",
+    "label": "Perú"
+  },
+  {
+    "value": "CL",
+    "label": "Chile"
+  }
+]
