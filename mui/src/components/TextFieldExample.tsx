@@ -1,5 +1,13 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Box, Button, MenuItem, Stack, TextField } from "@mui/material";
+import { Email } from "@mui/icons-material";
+import {
+  Box,
+  Button,
+  InputAdornment,
+  MenuItem,
+  Stack,
+  TextField,
+} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import nationalities from "../data/nationalities.json";
@@ -30,7 +38,7 @@ type FormData = z.infer<typeof schema>;
 function ValidationTextFields() {
   const { control, handleSubmit } = useForm<FormData>({
     resolver: zodResolver(schema),
-    defaultValues: { name: "", email: "" },
+    defaultValues: { name: "", email: "", message: "", nationality: "" },
   });
 
   return (
@@ -48,9 +56,11 @@ function ValidationTextFields() {
             {...field}
             error={!!error}
             label={error?.message}
+            required
             helperText={"Name"}
             placeholder="John Doe"
             variant="standard"
+            autoFocus
           />
         )}
       />
@@ -62,9 +72,20 @@ function ValidationTextFields() {
             {...field}
             error={!!error}
             label={error?.message}
+            required
+            type="email"
             helperText={"Email"}
             placeholder="email@example.com"
             variant="standard"
+            slotProps={{
+              input: {
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <Email />
+                  </InputAdornment>
+                ),
+              },
+            }}
           />
         )}
       />
@@ -76,7 +97,8 @@ function ValidationTextFields() {
             {...field}
             error={!!error}
             label={error?.message}
-            multiline
+            required
+            multiline // <-- textarea
             helperText={"Message"}
             placeholder="Write your message here..."
             variant="standard"
@@ -95,6 +117,9 @@ function ValidationTextFields() {
             helperText={"Select your nationality"}
             variant="standard"
           >
+            <MenuItem value="" selected disabled>
+              Countries
+            </MenuItem>
             {nationalities.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}

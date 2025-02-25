@@ -44,7 +44,10 @@ function ControlledAutoComplete() {
       <br />
       <Autocomplete
         value={value as typeof firstMovie | null}
-        onChange={(_event: any, newValue: typeof firstMovie | null) => {
+        onChange={(
+          _event: React.SyntheticEvent,
+          newValue: typeof firstMovie | null
+        ) => {
           if (newValue) setValue(newValue?.label);
           else setValue(null);
         }}
@@ -132,7 +135,7 @@ function AsynchronousAutoComplete() {
       onOpen={handleOpen}
       onClose={handleClose}
       isOptionEqualToValue={(option, value) => option.title === value.title}
-      getOptionLabel={(option) => option.title}
+      getOptionLabel={({ title }) => title}
       options={data || []}
       loading={isLoading}
       renderInput={(params) => <TextField {...params} label="Asynchronous" />}

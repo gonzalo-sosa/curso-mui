@@ -14,7 +14,7 @@ const camelToKebab = (str: string) =>
 
 export default function SideBar() {
   return (
-    <Stack is="nav" role="navigation">
+    <Stack component={"nav"} is="nav" role="navigation">
       {Object.keys(getAllExamples()).map((path) => (
         <Button
           sx={{ justifyContent: "start", textTransform: "unset" }}

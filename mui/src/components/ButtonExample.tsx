@@ -13,6 +13,7 @@ export default function ButtonExample() {
       <Colors />
       <WithIcons />
       <IconButtons />
+      <InputFileButton />
     </>
   );
 }
@@ -93,6 +94,44 @@ function IconButtons() {
       <IconButton color="primary" aria-label="add to shopping cart">
         <AddShoppingCartIcon />
       </IconButton>
+    </Stack>
+  );
+}
+
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { styled } from "@mui/material/styles";
+
+// <BaseInput />
+
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
+
+function InputFileButton() {
+  return (
+    <Stack mt={4} direction={"row"} justifyContent={"center"}>
+      <Button
+        component="label"
+        role={undefined}
+        variant="contained"
+        tabIndex={-1}
+        startIcon={<CloudUploadIcon />}
+      >
+        Upload files
+        <VisuallyHiddenInput
+          type="file"
+          onChange={(event) => console.log(event.target.files)}
+          multiple
+        />
+      </Button>
     </Stack>
   );
 }

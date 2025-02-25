@@ -50,9 +50,9 @@ function Albums({ data }: { data: Album[] }) {
   );
 }
 
-const withSkeleton = <T,>(
-  WrappedComponent: ({ data }: { data: T }) => JSX.Element,
+const WaitWithSkeleton = <T,>(
   skeletonProps: SkeletonOwnProps & { times?: number },
+  WrappedComponent: ({ data }: { data: T }) => JSX.Element,
   options: Omit<DefinedInitialDataOptions<T>, "initialData">
 ) => {
   const { data, isLoading } = useQuery(options);
@@ -78,9 +78,9 @@ const withSkeleton = <T,>(
 };
 
 function AlbumsWithSkeleton() {
-  return withSkeleton(
-    Albums,
+  return WaitWithSkeleton(
     { variant: "text", times: 20, sx: { fontSize: "1rem" } },
+    Albums,
     {
       queryKey: ["albums"],
       queryFn: getAlbums,
