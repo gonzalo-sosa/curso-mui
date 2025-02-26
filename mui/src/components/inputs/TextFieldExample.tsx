@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-import nationalities from "../data/nationalities.json";
+import nationalities from "../../data/nationalities.json";
 
 export default function TextFieldExample() {
   return (

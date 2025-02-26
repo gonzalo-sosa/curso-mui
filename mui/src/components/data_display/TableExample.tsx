@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@mui/material";
 
-export const TableExample = () => {
+export default function TableExample() {
   return (
     <TableContainer sx={{ maxHeight: "300px" }} component={Paper}>
       <Table stickyHeader aria-label="simple table">
@@ -40,7 +40,7 @@ export const TableExample = () => {
       </Table>
     </TableContainer>
   );
-};
+}
 
 const tableData = [
   {

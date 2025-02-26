@@ -1,21 +1,26 @@
 import { createBrowserRouter } from "react-router";
 import App from "./App";
-import AlertExample from "./components/AlertExample";
-import AppBarExample from "./components/AppBarExample";
-import AutoCompleteExample from "./components/AutoCompleteExample";
-import ButtonExample from "./components/ButtonExample";
-import ButtonGroupExample from "./components/ButtonGroupExample";
-import CardExample from "./components/CardExample";
-import CheckboxExample from "./components/CheckboxExample";
 import CustomizationExample from "./components/CustomizationExample";
 import CustomThemeExample from "./components/CustomThemeExample";
-import DialogExample from "./components/DialogExample";
-import RadioGroupExample from "./components/RadioGroupExample";
-import SkeletonExample from "./components/SkeletonExample";
-import { TableExample } from "./components/TableExample";
-import TextFieldExample from "./components/TextFieldExample";
-import TooltipExample from "./components/TooltipExample";
-import TypographyExample from "./components/TypographyExample";
+import TableExample from "./components/data_display/TableExample";
+import TooltipExample from "./components/data_display/TooltipExample";
+import TypographyExample from "./components/data_display/TypographyExample";
+import AlertExample from "./components/feedback/AlertExample";
+import DialogExample from "./components/feedback/DialogExample";
+import SkeletonExample from "./components/feedback/SkeletonExample";
+import AutoCompleteExample from "./components/inputs/AutoCompleteExample";
+import ButtonExample from "./components/inputs/ButtonExample";
+import ButtonGroupExample from "./components/inputs/ButtonGroupExample";
+import CheckboxExample from "./components/inputs/CheckboxExample";
+import RadioGroupExample from "./components/inputs/RadioGroupExample";
+import TextFieldExample from "./components/inputs/TextFieldExample";
+import ImageListExample from "./components/layout/ImageListExample";
+import DrawerExample from "./components/navigation/DrawerExample";
+import PaginationExample from "./components/navigation/PaginationExample";
+import AppBarExample from "./components/surfaces/AppBarExample";
+import CardExample from "./components/surfaces/CardExample";
+import ModalExample from "./components/utils/ModalExample";
+import PopoverExample from "./components/utils/PopoverExample";
 
 const router = createBrowserRouter([
   {
@@ -24,68 +29,129 @@ const router = createBrowserRouter([
     errorElement: <h1>404</h1>,
     children: [
       {
-        path: "auto-complete-example",
-        element: <AutoCompleteExample />,
-      },
-      {
-        path: "button-example",
-        element: <ButtonExample />,
-      },
-      {
-        path: "button-group-example",
-        element: <ButtonGroupExample />,
-      },
-      {
-        path: "skeleton-example",
-        element: <SkeletonExample />,
-      },
-      {
-        path: "text-field-example",
-        element: <TextFieldExample />,
-      },
-      {
-        path: "typography-example",
-        element: <TypographyExample />,
-      },
-      {
-        path: "app-bar-example",
-        element: <AppBarExample />,
-      },
-      {
-        path: "card-example",
-        element: <CardExample />,
-      },
-      {
-        path: "dialog-example",
-        element: <DialogExample />,
-      },
-      {
-        path: "radio-group-example",
-        element: <RadioGroupExample />,
-      },
-      {
-        path: "checkbox-example",
-        element: <CheckboxExample />,
-      },
-      {
-        path: "custom-theme-example",
-        element: <CustomThemeExample />,
-      },
-      {
-        path: "alert-example",
-        element: <AlertExample />,
-      },
-      {
-        path: "table-example",
-        element: <TableExample />,
-      },
-      {
-        path: "tooltip-example",
-        element: <TooltipExample />,
-      },
-      {
-        path: "customization-example",
-        element: <CustomizationExample />,
+        path: "components",
+        children: [
+          {
+            path: "custom-theme-example",
+            element: <CustomThemeExample />,
+          },
+
+          {
+            path: "customization-example",
+            element: <CustomizationExample />,
+          },
+          {
+            path: "inputs",
+            children: [
+              {
+                path: "auto-complete-example",
+                element: <AutoCompleteExample />,
+              },
+              {
+                path: "button-example",
+                element: <ButtonExample />,
+              },
+              {
+                path: "button-group-example",
+                element: <ButtonGroupExample />,
+              },
+              {
+                path: "checkbox-example",
+                element: <CheckboxExample />,
+              },
+              {
+                path: "radio-group-example",
+                element: <RadioGroupExample />,
+              },
+              {
+                path: "text-field-example",
+                element: <TextFieldExample />,
+              },
+            ],
+          },
+          {
+            path: "data_display",
+            children: [
+              {
+                path: "typography-example",
+                element: <TypographyExample />,
+              },
+              {
+                path: "tooltip-example",
+                element: <TooltipExample />,
+              },
+              {
+                path: "table-example",
+                element: <TableExample />,
+              },
+            ],
+          },
+          {
+            path: "feedback",
+            children: [
+              {
+                path: "alert-example",
+                element: <AlertExample />,
+              },
+              {
+                path: "dialog-example",
+                element: <DialogExample />,
+              },
+              {
+                path: "skeleton-example",
+                element: <SkeletonExample />,
+              },
+            ],
+          },
+          {
+            path: "surfaces",
+            children: [
+              {
+                path: "app-bar-example",
+                element: <AppBarExample />,
+              },
+              {
+                path: "card-example",
+                element: <CardExample />,
+              },
+            ],
+          },
+          {
+            path: "navigation",
+            children: [
+              {
+                path: "drawer-example",
+                element: <DrawerExample />,
+              },
+              {
+                path: "pagination-example",
+                element: <PaginationExample />,
+              },
+            ],
+          },
+          {
+            path: "layout",
+            children: [
+              {
+                path: "image-list-example",
+                element: <ImageListExample />,
+              },
+            ],
+          },
+          {
+            path: "utils",
+            children: [
+              {
+                path: "modal-example",
+                element: <ModalExample />,
+              },
+              {
+                path: "popover-example",
+                element: <PopoverExample />,
+              },
+            ],
+          },
+        ],
       },
     ],
   },

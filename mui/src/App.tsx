@@ -6,7 +6,7 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import { Outlet } from "react-router";
-import SideBar from "./components/SideBar";
+import SideBar from "./SideBar";
 
 const NeutralTheme = {
   neutral: {
@@ -42,13 +42,22 @@ const lightTheme = createTheme({
 
 export type CustomTheme = typeof lightTheme;
 
+const getAllExamples = () => import.meta.glob("./components/**/*.tsx");
+
+const simplifyPath = (path: string) =>
+  path
+    .replace(/^\.\.?\//, "") // Elimina ../ y ./
+    .replace(/\.tsx$/, ""); // Elimina extensión .tsx
+
+const examples = Object.keys(getAllExamples()).map(simplifyPath);
+
 function App() {
   return (
     <ThemeProvider theme={lightTheme}>
       <CssBaseline>
-        <Grid2 container spacing={2} p={2}>
-          <Grid2 size={3}>
-            <SideBar />
+        <Grid2 container p={2} sx={{ justifyContent: "end" }}>
+          <Grid2 size={4}>
+            <SideBar items={examples} />
           </Grid2>
           <Grid2 size={"grow"}>
             <Outlet />
